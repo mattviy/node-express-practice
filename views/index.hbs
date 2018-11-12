@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/public/styles/main.css">
+</head>
+<body>
+    {{>nav}}
+    <h1>Home Page</h1> 
+
+<!--- The each block helper + @first - @last   --->
+    <ul>
+        {{#each cities}}
+            {{#if @first}}
+                <li><b>{{this}}</b></li>
+            {{else if @last}}
+                <li><b>{{this}}</b></li>
+            {{else}}
+                <li>{{this}}</li>
+            {{/if}}
+        {{/each}}
+    </ul>
+
+<!--- The with block helper --->
+    {{#with address}}
+        <p>adress:{{street}}, {{number}}</p>
+    {{/with}}
+
+</body>
+</html>
+
+  
+
+ 
